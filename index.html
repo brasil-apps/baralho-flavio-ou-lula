@@ -1,0 +1,97 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Baralho Bom ou Ruim</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Figtree:wght@400;600&display=swap">
+<style>
+/* Layout: one card centered on a felt table, buttons below */
+:root{--bg:#eef0ea;--felt:#e2e6dc;--card:#fff;--fg:#1c1d1a;--muted:#6b6e66;--red:#9b1525;--line:#1c1d1a;
+--display:"Fraunces",Georgia,serif;--body:"Figtree",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151714;--felt:#1d201b;--card:#24271f;--fg:#ecebe4;--muted:#9a9c92;--red:#e0566a;--line:#ecebe4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#151714;--felt:#1d201b;--card:#24271f;--fg:#ecebe4;--muted:#9a9c92;--red:#e0566a;--line:#ecebe4;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;padding:0 16px}
+main{max-width:420px;margin:0 auto;padding-block:24px;display:flex;flex-direction:column;gap:16px;align-items:center}
+h1{font-family:var(--display);font-weight:800;font-size:1.6rem;margin:0;text-align:center}
+.sub{color:var(--muted);margin:0;text-align:center;font-size:.9rem}
+.bar{width:100%;display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums}
+.card{width:100%;aspect-ratio:5/7;max-width:100%;background:var(--card);border:2px solid var(--line);border-radius:18px;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 24px;box-sizing:border-box;gap:10px;box-shadow:0 6px 0 var(--felt)}
+.pip{position:absolute;font-family:var(--display);font-size:1.6rem;line-height:1;display:flex;flex-direction:column;align-items:center}
+.tl{top:14px;left:16px}.br{bottom:14px;right:16px;transform:rotate(180deg)}
+.red{color:var(--red)}
+.q{color:var(--red);font-weight:600}
+.txt{font-family:var(--display);font-weight:600;font-size:1.35rem;line-height:1.3;text-wrap:balance}
+.tag{color:var(--muted);font-size:.8rem}
+.who{font-family:var(--display);font-weight:800;font-size:1.8rem;color:var(--red);letter-spacing:.02em}
+.you{font-size:.95rem}
+.btns{display:flex;gap:12px;width:100%}
+button{flex:1;font:600 1rem var(--body);padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+button.pri{background:var(--fg);color:var(--bg)}
+button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td,th{padding:8px;border-bottom:1px solid var(--muted);text-align:left}
+td:not(:first-child),th:not(:first-child){text-align:right}
+.credit{font-size:.85rem;color:var(--muted);text-align:center;line-height:1.6;border-top:1px solid var(--muted);padding-top:14px;width:100%}.credit a{color:var(--red)}.credit b{color:var(--fg)}
+.qr{display:block;padding:8px;background:#fff;border-radius:8px;line-height:0}.qr img{width:120px;height:120px}
+.score{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:.85rem;font-variant-numeric:tabular-nums}.score div{border:1.5px solid var(--line);border-radius:10px;padding:8px;text-align:center}.score b{display:block;font-size:1.2rem;color:var(--red)}
+.note{font-size:.8rem;color:var(--muted);text-align:center}
+</style>
+<main>
+<h1>Isso é bom ou ruim?</h1>
+<p class="sub"><i>Algumas afirmações estão simplificadas para jogabilidade. Confira sempre as fontes para o contexto adequado.</i></p>
+<p class="sub">Julgue a frase primeiro. Depois descubra quem fez ou defende.</p>
+<div class="bar"><span id="prog"></span><span id="mode">Momento 1: julgar</span></div>
+<div class="score" id="score"></div>
+<div id="stage" style="width:100%;display:flex;flex-direction:column;gap:16px"></div>
+<div class="credit">Adaptado de: <a href="https://www.instagram.com/reel/DeW96M_zDce/" target="_blank">post original</a> de <a href="https://www.instagram.com/enfrebeca/" target="_blank">@enfrebeca</a><br>Feito com apoio de IA. Algumas informações podem estar imprecisas; confira sempre as fontes.</div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const Q={"1": "P3CnvVp1fQ0i", "2": "Uii3CdShBwxl", "3": "RuBjxDsa20u6", "4": "dHGAbK07EeNi", "5": "lmLDolxxmbe8", "6": "6Y0k0NSEqYAf", "7": "Cp5ld7d74eJz", "8": "QHoDIaW0s76S", "9": "uAb6X5qlvgko", "10": "10EPtzvJ411n", "11": "JmgHvVIK4FBU", "12": "2Sc5Lu0f8PPN", "13": "SQUb1SmH42wq", "14": "DMZ1zvaCDaw3", "15": "YyTiU7HM7WL7", "16": "S0B0B1E97d8N", "17": "UoEx65lF6nZF", "18": "IRpAL11u7tZb", "19": "FXJPpBwpARsu", "20": "r3qicEHilUxB", "21": "G865aP0aFgA0", "22": "aWboVks4X5lT", "23": "q80ubrYZId3Z", "24": "uu6vzXHD7U5j", "25": "h17vk7S01piQ", "26": "m0iExcVCaq4R", "27": "P4cnvYcH4gdq", "28": "zOoIqlwZDYK2", "29": "m4nC9mwZT0Xh", "30": "ySUaZPPBLM49", "31": "aW1h8Pyq2v1n", "32": "jeBg9jv4F1r6"};
+const L="Time do LULA",F="Time do FLÁVIO BOLSONARO";
+const D=[
+["O Brasil tem um único dono: o povo brasileiro.","economia"],["Defender nossas riquezas é defender nossa soberania.","economia"],
+["Adotar jornada de trabalho com duas folgas por semana, sem redução de salário.","direitostrabalhistas"],["Fortalecer a autonomia da Polícia Federal.","seguranca"],
+["Combater o crime organizado, atacando as suas fontes financeiras.","seguranca"],["Aumentar vagas nas universidades.","educacao"],
+["Manter cotas para Indígenas, Quilombolas e Negros nas universidades e concursos públicos.","educacao"],["Cobrar impostos dos super-ricos para melhorar saúde, educação e segurança.","reformatributaria"],
+["Regular as redes sociais para preservar a Democracia e combater as fake news e os crimes digitais.","soberania"],["Reforçar programas sociais para reduzir a pobreza.","programassociais"],
+["Garantir o aumento anual do salário mínimo acima da inflação.","direitostrabalhistas"],["Aumentar o número de creches.","programassociais"],
+["Fortalecer o SUS para garantir saúde para todos.","saude"],["Fortalecer a Casa da Mulher Brasileira para acolher vítimas de violência doméstica.","defesadamulher"],
+["Criação do Sistema Único de Segurança semelhante ao SUS.","seguranca"],["Ampliar o Programa das Carretas de Saúde com Especialistas.","saude"],
+["Apoiar o tarifaço imposto por Trump.","economia"],["Oferecer o Brasil para exploração dos Estados Unidos.","economia"],
+["Não reconhecer as mudanças climáticas e apostar que saneamento básico é suficiente para enfrentar os desafios que estão surgindo.","meioambiente"],["Fazer parte de grupos antivacinas.","saude"],
+["Defender o armamento da população.","seguranca"],["Defender anistia para os golpistas.","democracia"],
+["Parcerias público-privadas na educação e universidades públicas fora do MEC.","privatizacao"],["Adotar o \"tesouraço\" (cortes extremos) nos gastos públicos.","estadominimo"],
+["Mudar a Lei do Racismo retirando a punição do agressor.","diversidade"],["Afirmar que mulheres solteiras votam mal.","democracia"],
+["Afirmar que contratar mulheres dá prejuízo para o patrão.","direitostrabalhistas"],["Cortar programas sociais.","estadominimo"],
+["Congelar o salário-mínimo e aposentadorias.","direitostrabalhistas"],["Acabar com o SUS e adotar saúde somente para quem puder pagar.","estadominimo"],
+["Acabar com as leis trabalhistas deixando cada empregado negociar direto com o patrão.","direitostrabalhistas"],["Manter inexplicada a relação próxima com Vorcaro, do Banco Master, e os pedidos e recebimentos de dinheiro que realizou.","corrupcao"]
+].map((c,i)=>({n:i+1,t:c[0],tag:c[1],who:i<16?L:F,src:"https://tr.ee/"+Q[i+1],suit:["♥","♠","♦","♣"][Math.floor(i/8)]}));
+let deck,i,ans,revealed;
+const S=document.getElementById("stage"),P=document.getElementById("prog"),M=document.getElementById("mode");
+const isRed=s=>s=="♥"||s=="♦";
+function start(){deck=D.slice();for(let k=deck.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[deck[k],deck[j]]=[deck[j],deck[k]]}i=0;ans=[];revealed=false;draw()}
+function face(c,inner){const cl=isRed(c.suit)?"red":"";const lab=c.n==1?"A":c.n;
+return `<div class="card"><div class="pip tl ${cl}">${lab}<span>${c.suit}</span></div>${inner}<div class="pip br ${cl}">${lab}<span>${c.suit}</span></div></div>`}
+function draw(){
+ score();
+ if(i>=deck.length) return end();
+ const c=deck[i];P.textContent=`Carta ${i+1} de ${deck.length}`;
+ if(!revealed){M.textContent="Momento 1: julgar";
+  S.innerHTML=face(c,`<div class="q">Isso é<br><span style="color:var(--fg);font-weight:400">bom ou ruim?</span></div><div class="txt">“${c.t}”</div><div class="tag">#${c.tag}</div>`)+
+  `<div class="btns"><button id="b1">👍 Bom</button><button id="b2">👎 Ruim</button></div>`;
+  b1.onclick=()=>pick(1);b2.onclick=()=>pick(0);
+ }else{M.textContent="Momento 2: revelar";const a=ans[i];
+  S.innerHTML=face(c,`<div class="tag" style="font-style:italic">“${c.t}”</div><div class="you">Você achou <b>“${a?"bom":"ruim"}”</b>? Isso vem do:</div><div class="who">${c.who}</div><a class="qr" id="qr" href="${c.src}" target="_blank" title="Abrir a fonte"></a><a href="${c.src}" target="_blank" class="tag" style="color:var(--red)">Ver a fonte ↗</a>`)+
+  `<div class="btns"><button class="pri" id="nx">Próxima carta</button></div>`;
+  try{new QRCode(document.getElementById("qr"),{text:c.src,width:240,height:240})}catch(e){}
+  nx.onclick=()=>{i++;revealed=false;draw()};nx.focus();
+ }}
+function pick(v){ans[i]=v;revealed=true;draw()}
+function score(){const t={[L]:[0,0],[F]:[0,0]};for(let k=0;k<i+(revealed?1:0);k++){const w=deck[k].who;t[w][1]++;if(ans[k])t[w][0]++}
+ document.getElementById("score").innerHTML=[L,F].map(w=>`<div>Concorda com ${w}<b>${t[w][0]} de ${t[w][1]}</b></div>`).join("");return t}
+function end(){P.textContent="Fim";M.textContent="Resultado";
+ score();const t={[L]:[0,0],[F]:[0,0]};deck.forEach((c,k)=>t[c.who][ans[k]?0:1]++);
+ S.innerHTML=`<table><tr><th></th><th>Concordo (bom)</th><th>Discordo (ruim)</th></tr>${[L,F].map(w=>`<tr><td>${w}</td><td>${t[w][0]}</td><td>${t[w][1]}</td></tr>`).join("")}</table>
+ <div class="btns"><button class="pri" id="rs">Jogar de novo</button></div>`;rs.onclick=start}
+start();
+</script>
+
+</body></html>
