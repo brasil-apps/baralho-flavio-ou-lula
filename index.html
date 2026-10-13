@@ -1,5 +1,32 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Baralho Bom ou Ruim</title>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Isso é bom ou ruim? · Baralho Flávio ou Lula</title>
+<meta name="description" content="Jogo de cartas: julgue cada proposta como boa ou ruim e descubra se ela vem do time do Lula ou do time do Flávio Bolsonaro. Com fontes.">
+<link rel="canonical" href="https://brasil-apps.github.io/baralho-flavio-ou-lula/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#9b1525">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Baralho Flávio ou Lula">
+<meta property="og:title" content="Isso é bom ou ruim?">
+<meta property="og:description" content="Jogo de cartas: julgue cada proposta como boa ou ruim e descubra se ela vem do time do Lula ou do time do Flávio Bolsonaro. Com fontes.">
+<meta property="og:url" content="https://brasil-apps.github.io/baralho-flavio-ou-lula/">
+<meta property="og:image" content="https://brasil-apps.github.io/baralho-flavio-ou-lula/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Carta de baralho com a pergunta: isso é bom ou ruim?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Isso é bom ou ruim?">
+<meta name="twitter:description" content="Jogo de cartas: julgue cada proposta como boa ou ruim e descubra se ela vem do time do Lula ou do time do Flávio Bolsonaro. Com fontes.">
+<meta name="twitter:image" content="https://brasil-apps.github.io/baralho-flavio-ou-lula/og-image.png">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Figtree:wght@400;600&display=swap">
 <style>
 /* Layout: one card centered on a felt table, buttons below */
@@ -29,8 +56,9 @@ table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
 td,th{padding:8px;border-bottom:1px solid var(--muted);text-align:left}
 td:not(:first-child),th:not(:first-child){text-align:right}
 .credit{font-size:.85rem;color:var(--muted);text-align:center;line-height:1.6;border-top:1px solid var(--muted);padding-top:14px;width:100%}.credit a{color:var(--red)}.credit b{color:var(--fg)}
-.qr{display:block;padding:8px;background:#fff;border-radius:8px;line-height:0}.qr img{width:120px;height:120px}
+.qr{display:block;padding:8px;background:#fff;border-radius:8px;line-height:0}.qr img{width:96px;height:96px}
 .score{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:.85rem;font-variant-numeric:tabular-nums}.score div{border:1.5px solid var(--line);border-radius:10px;padding:8px;text-align:center}.score b{display:block;font-size:1.2rem;color:var(--red)}
+.nota{font-size:.78rem;line-height:1.35;background:var(--felt);border-radius:8px;padding:6px 8px;text-align:left}
 .note{font-size:.8rem;color:var(--muted);text-align:center}
 </style>
 <main>
@@ -44,7 +72,7 @@ td:not(:first-child),th:not(:first-child){text-align:right}
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-const Q={"1": "P3CnvVp1fQ0i", "2": "Uii3CdShBwxl", "3": "RuBjxDsa20u6", "4": "dHGAbK07EeNi", "5": "lmLDolxxmbe8", "6": "6Y0k0NSEqYAf", "7": "Cp5ld7d74eJz", "8": "QHoDIaW0s76S", "9": "uAb6X5qlvgko", "10": "10EPtzvJ411n", "11": "JmgHvVIK4FBU", "12": "2Sc5Lu0f8PPN", "13": "SQUb1SmH42wq", "14": "DMZ1zvaCDaw3", "15": "YyTiU7HM7WL7", "16": "S0B0B1E97d8N", "17": "UoEx65lF6nZF", "18": "IRpAL11u7tZb", "19": "FXJPpBwpARsu", "20": "r3qicEHilUxB", "21": "G865aP0aFgA0", "22": "aWboVks4X5lT", "23": "q80ubrYZId3Z", "24": "uu6vzXHD7U5j", "25": "h17vk7S01piQ", "26": "m0iExcVCaq4R", "27": "P4cnvYcH4gdq", "28": "zOoIqlwZDYK2", "29": "m4nC9mwZT0Xh", "30": "ySUaZPPBLM49", "31": "aW1h8Pyq2v1n", "32": "jeBg9jv4F1r6"};
+const Q={"1": {"u": "https://sbtnews.sbt.com.br/noticia/brasil/lula-defende-soberania-nacional-em-pronunciamento-na-vespera-do-7-de-setembro", "s": "SBT News", "n": ""}, "2": {"u": "https://diariodonordeste.verdesmares.com.br/pontopoder/em-pronunciamento-lula-defende-soberania-nacional-nao-seremos-colonia-de-ninguem-1.3789837", "s": "Diário do Nordeste", "n": ""}, "3": {"u": "https://www.poder360.com.br/poder-governo/lula-pressiona-congresso-pelo-fim-da-escala-6-x-1/", "s": "Poder360", "n": ""}, "4": {"u": "https://www.opovo.com.br/noticias/politica/2024/11/03/entenda-o-que-e-a-pec-da-seguranca-publica-apresentada-por-lula.html", "s": "O Povo", "n": "Simplificado: a fonte trata da PEC da Segurança, que amplia o papel da PF. Não achamos fonte confiável sobre “autonomia” da PF."}, "5": {"u": "https://www.infomoney.com.br/?p=3350440", "s": "InfoMoney", "n": ""}, "6": {"u": "https://mais.opovo.com.br/jornal/cidades/2025/10/15/governo-anuncia-67-mil-novos-cargos-para-universidades-sendo-286-para-o-ceara.html", "s": "O Povo", "n": ""}, "7": {"u": "https://jovempan.com.br/politica/lula-sanciona-lei-que-amplia-para-30-cotas-para-pessoas-pretas-pardas-indigenas-e-quilombolas-em-concursos/", "s": "Jovem Pan", "n": ""}, "8": {"u": "https://www.opovo.com.br/noticias/economia/2025/11/26/lula-sanciona-isencao-do-ir-para-quem-ganha-ate-rs-5-mil.html", "s": "O Povo", "n": ""}, "9": {"u": "https://www.poder360.com.br/governo/em-forum-da-unesco-lula-defende-regulacao-das-redes-sociais/", "s": "Poder360", "n": ""}, "10": {"u": "https://www.opovo.com.br/noticias/brasil/2025/07/28/brasil-sai-do-mapa-da-fome-anuncia-onu.html", "s": "O Povo", "n": ""}, "11": {"u": "https://sbtnews.sbt.com.br/noticia/brasil/salario-minimo-o-que-mudou-com-a-nova-lei-qual-valor-esperado-para-2025-entenda", "s": "SBT News", "n": ""}, "12": {"u": "https://agenciagov.ebc.com.br/noticias/202507/governo-federal-anuncia-r-2-3-bilhoes-para-construcao-de-creches-e-aquisicao-de-veiculos-para-o-transporte-escolar-1", "s": "Agência Gov", "n": ""}, "13": {"u": "https://pt.org.br/wp-content/uploads/2026/07/sns-plano-de-governo-pt-2026-julho.pdf", "s": "Plano de governo do PT (2026)", "n": ""}, "14": {"u": "https://www.folhape.com.br/politica/ministerio-da-mulher-planeja-ampliar-a-rede-de-atendimento-a-mulheres/396224/", "s": "Folha de Pernambuco", "n": ""}, "15": {"u": "https://www.opovo.com.br/noticias/politica/2024/11/03/entenda-o-que-e-a-pec-da-seguranca-publica-apresentada-por-lula.html", "s": "O Povo", "n": ""}, "16": {"u": "https://sbtnews.sbt.com.br/noticia/politica/lula-sanciona-programa-agora-tem-especialistas-para-reduzir-filas-do-sus", "s": "SBT News", "n": ""}, "17": {"u": "https://www.bemparana.com.br/noticias/politica/flavio-bolsonaro-diz-a-trump-que-tarifaco-daria-vitoria-politica-a-lula-e-pede-decisao-apos-eleicao/", "s": "Bem Paraná", "n": "Contestado: Flávio pediu a Trump que adiasse o tarifaço até depois da eleição. Ele não o apoiou abertamente."}, "18": {"u": "https://www.nsctotal.com.br/?p=7856727", "s": "NSC Total", "n": "Contexto: num evento conservador no Texas (mar/2026), Flávio apresentou as terras raras do Brasil como forma de os EUA reduzirem a dependência da China."}, "19": {"u": "https://aosfatos.org/noticias/checamos-flavio-bolsonaro-globo/", "s": "Aos Fatos", "n": ""}, "20": {"u": "https://www.jb.com.br/rio/noticias/2011/08/12/amp/apos-comentario-sobre-juiza-deputado-diz-sofrer-preconceito-por-ser-bolsonaro.html", "s": "Jornal do Brasil (2011)", "n": "Contexto: a juíza Patrícia Acioli foi morta por policiais militares em 2011. Flávio manteve a crítica a ela em entrevista."}, "21": {"u": "https://www.poder360.com.br/congresso/uma-arma-parada-nao-faz-nada-diz-flavio-bolsonaro/", "s": "Poder360", "n": ""}, "22": {"u": "https://sbtnews.sbt.com.br/noticia/politica/flavio-bolsonaro-defende-anistia-a-presos-pelo-8-1-e-projeta-vitoria-nas-eleicoes-ao-lado-do-pai", "s": "SBT News", "n": ""}, "24": {"u": "https://www.infomoney.com.br/politica/o-que-significa-o-broche-de-tesoura-usado-por-flavio-bolsonaro-no-anuncio-de-vice/", "s": "InfoMoney", "n": ""}, "26": {"u": "https://www.congressoemfoco.com.br/noticia/26373/flavio-bolsonaro-empregou-em-seu-gabinete-mae-e-mulher-de-lider-de-milicia-diz-o-globo", "s": "Congresso em Foco (O Globo)", "n": "Contexto: o miliciano era Adriano da Nóbrega. Flávio diz que as contratações foram indicadas por Fabrício Queiroz."}, "28": {"u": "https://www.jornalopcao.com.br/ultimas-noticias/lula-acusa-flavio-bolsonaro-de-planejar-cortes-no-bolsa-familia-e-em-outros-programas-sociais-877826/", "s": "Jornal Opção", "n": "Contestado: é uma acusação de Lula. Flávio diz que manterá o Bolsa Família."}, "29": {"u": "https://congressoemfoco.com.br/area/pais/familia-bolsonaro-adquiriu-51-imoveis-em-dinheiro-vivo", "s": "Congresso em Foco (levantamento do UOL)", "n": "Contexto: as compras são da família Bolsonaro, desde os anos 1990. Pagar em dinheiro vivo não é crime por si só."}, "32": {"u": "https://www.opovo.com.br/agencia/bbc/2026/05/13/ligacao-de-flavio-bolsonaro-e-vorcaro-abre-crise-na-campanha-bolsonarista-balde-de-agua-fria.html", "s": "BBC News Brasil", "n": ""}, "23": {"u": "https://sbtnews.sbt.com.br/noticia/eleicoes/educacao-o-que-flavio-propoe-em-plano-de-governo", "s": "SBT News", "n": ""}, "25": {"u": "https://www.band.com.br/politica/eleicoes/2026/flavio-propoe-limitar-stf-reduzir-maioridade-e-acabar-com-reeleicao-202608131847", "s": "Band", "n": ""}, "27": {"u": "https://www.cnnbrasil.com.br/politica/stj-anula-decisoes-contra-flavio-bolsonaro-no-caso-das-rachadinhas/", "s": "CNN Brasil", "n": "Contexto: o STJ anulou provas do caso e a denúncia foi arquivada. Flávio não foi condenado."}, "30": {"u": "https://www.metropoles.com/colunas/guilherme-amado/pec-que-pode-privatizar-praias-retoma-obsessao-dos-bolsonaro", "s": "Metrópoles", "n": "Simplificado: Flávio relatou a “PEC das Praias” e defende cassinos em resorts no litoral."}, "31": {"u": "https://sbtnews.sbt.com.br/noticia/eleicoes/educacao-o-que-flavio-propoe-em-plano-de-governo", "s": "SBT News", "n": ""}};
 const L="Time do LULA",F="Time do FLÁVIO BOLSONARO";
 const D=[
 ["O Brasil tem um único dono: o povo brasileiro.","economia"],["Defender nossas riquezas é defender nossa soberania.","economia"],
@@ -56,14 +84,14 @@ const D=[
 ["Fortalecer o SUS para garantir saúde para todos.","saude"],["Fortalecer a Casa da Mulher Brasileira para acolher vítimas de violência doméstica.","defesadamulher"],
 ["Criação do Sistema Único de Segurança semelhante ao SUS.","seguranca"],["Ampliar o Programa das Carretas de Saúde com Especialistas.","saude"],
 ["Apoiar o tarifaço imposto por Trump.","economia"],["Oferecer o Brasil para exploração dos Estados Unidos.","economia"],
-["Não reconhecer as mudanças climáticas e apostar que saneamento básico é suficiente para enfrentar os desafios que estão surgindo.","meioambiente"],["Fazer parte de grupos antivacinas.","saude"],
+["Negar o aquecimento global.","meioambiente"],["Relativizar o assassinato de uma juíza.","seguranca"],
 ["Defender o armamento da população.","seguranca"],["Defender anistia para os golpistas.","democracia"],
-["Parcerias público-privadas na educação e universidades públicas fora do MEC.","privatizacao"],["Adotar o \"tesouraço\" (cortes extremos) nos gastos públicos.","estadominimo"],
-["Mudar a Lei do Racismo retirando a punição do agressor.","diversidade"],["Afirmar que mulheres solteiras votam mal.","democracia"],
-["Afirmar que contratar mulheres dá prejuízo para o patrão.","direitostrabalhistas"],["Cortar programas sociais.","estadominimo"],
-["Congelar o salário-mínimo e aposentadorias.","direitostrabalhistas"],["Acabar com o SUS e adotar saúde somente para quem puder pagar.","estadominimo"],
-["Acabar com as leis trabalhistas deixando cada empregado negociar direto com o patrão.","direitostrabalhistas"],["Manter inexplicada a relação próxima com Vorcaro, do Banco Master, e os pedidos e recebimentos de dinheiro que realizou.","corrupcao"]
-].map((c,i)=>({n:i+1,t:c[0],tag:c[1],who:i<16?L:F,src:"https://tr.ee/"+Q[i+1],suit:["♥","♠","♦","♣"][Math.floor(i/8)]}));
+["Tirar o ensino superior do MEC e passá-lo ao Ministério da Ciência e Tecnologia.","educacao"],["Adotar o \"tesouraço\" (cortes extremos) nos gastos públicos.","estadominimo"],
+["Reduzir a maioridade penal de 18 para 16 anos.","seguranca"],["Empregar no gabinete familiares do chefe de um grupo de matadores de aluguel.","seguranca"],
+["Ser denunciado por desviar salários de funcionários do gabinete.","corrupcao"],["Cortar programas sociais.","estadominimo"],
+["Comprar 51 imóveis em dinheiro vivo.","corrupcao"],["Apoiar cassinos em praias brasileiras.","economia"],
+["Ampliar o modelo de escolas cívico-militares.","educacao"],["Manter inexplicada a relação próxima com Vorcaro, do Banco Master, e os pedidos e recebimentos de dinheiro que realizou.","corrupcao"]
+].map((c,i)=>({n:i+1,t:c[0],tag:c[1],who:i<16?L:F,src:(Q[i+1]||{}).u,fonte:(Q[i+1]||{}).s,nota:(Q[i+1]||{}).n,suit:["♥","♠","♦","♣"][Math.floor(i/8)]})).filter(c=>c.src);
 let deck,i,ans,revealed;
 const S=document.getElementById("stage"),P=document.getElementById("prog"),M=document.getElementById("mode");
 const isRed=s=>s=="♥"||s=="♦";
@@ -79,7 +107,7 @@ function draw(){
   `<div class="btns"><button id="b1">👍 Bom</button><button id="b2">👎 Ruim</button></div>`;
   b1.onclick=()=>pick(1);b2.onclick=()=>pick(0);
  }else{M.textContent="Momento 2: revelar";const a=ans[i];
-  S.innerHTML=face(c,`<div class="tag" style="font-style:italic">“${c.t}”</div><div class="you">Você achou <b>“${a?"bom":"ruim"}”</b>? Isso vem do:</div><div class="who">${c.who}</div><a class="qr" id="qr" href="${c.src}" target="_blank" title="Abrir a fonte"></a><a href="${c.src}" target="_blank" class="tag" style="color:var(--red)">Ver a fonte ↗</a>`)+
+  S.innerHTML=face(c,`<div class="tag" style="font-style:italic">“${c.t}”</div><div class="you">Você achou <b>“${a?"bom":"ruim"}”</b>? Isso vem do:</div><div class="who">${c.who}</div><a class="qr" id="qr" href="${c.src}" target="_blank" title="Abrir a fonte"></a><a href="${c.src}" target="_blank" class="tag" style="color:var(--red)">Fonte: ${c.fonte} ↗</a>${c.nota?`<div class="nota">⚠ ${c.nota}</div>`:""}`)+
   `<div class="btns"><button class="pri" id="nx">Próxima carta</button></div>`;
   try{new QRCode(document.getElementById("qr"),{text:c.src,width:240,height:240})}catch(e){}
   nx.onclick=()=>{i++;revealed=false;draw()};nx.focus();
@@ -94,4 +122,5 @@ function end(){P.textContent="Fim";M.textContent="Resultado";
 start();
 </script>
 
-</body></html>
+</body>
+</html>
